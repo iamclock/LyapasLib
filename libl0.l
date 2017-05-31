@@ -7,7 +7,7 @@ printLComplex(L1/)
 **
 
 
-printSComplex(F1/)
+printFComplex(F1/)
 	Oi
 	§100 *printf(F1i/) ∆i /' '>C ↑(i<Q1)100
 **
@@ -2049,8 +2049,7 @@ BFfindVarCount(n/v)
 BFget(L1, t/b)
 	1⇒i t⇒s ↑(t<32)1 OZ t:32+1⇒i Z⇒s
 	§1
-		/'i = '>C *printf(i/) /'\n'>C
-		/'s = '>C *printf(s/) /'\n'>C
+		*** /'i = '>C *printf(i/) /'\n'>C
 		L1i&Is>s⇒b
 **
 
