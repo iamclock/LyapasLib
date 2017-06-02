@@ -14,6 +14,8 @@ def old_lyapas_sintax_replace(file_from, file_to):
 	not_eq_zero = '↦'
 	eq_zero = '↪'
 	dub_arrow_right = "⇒"
+	dub_arrow_up = "⇑"
+	dub_arrow_down = "⇓"
 	paragraph = "§"
 	more_or_eq = "≥"
 	less_or_eq = "≤"
@@ -25,6 +27,8 @@ def old_lyapas_sintax_replace(file_from, file_to):
 	disunction = "∨"
 	xor = "⊕"
 	reverse = "¬"
+	exch = "⇔"
+	
 	countStars = 0
 	x = file_from.read(1)
 	while x != '':
@@ -85,11 +89,11 @@ def old_lyapas_sintax_replace(file_from, file_to):
 			prev = x
 			x = file_from.read(1)
 			if x == '(':
-				file_to.write(prev)
+				file_to.write(exch)
 			else:
 				file_to.write(dub_arrow_right)
-				file_to.write(x)
-				x = file_from.read(1)
+			file_to.write(x)
+			x = file_from.read(1)
 		#elif x == '/':
 			#file_to.write(x)
 			#x = file_from.read(1)
