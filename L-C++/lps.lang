@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+Lyapas
+
+-->
+<language id="lps" _name="Lyapas-TSU" version="2.0" _section="Sources">
+  <metadata>
+    <property name="mimetypes"></property>
+    <property name="globs">*.l</property>
+    <property name="line-comment-start">\*\*\*</property>
+  </metadata>
+
+ <styles>
+    <style id="comment"           _name="Comment"               map-to="def:comment"/>
+	  <style id="commentm"           _name="Commentm"             map-to="def:comment"/>
+	  <style id="string"            _name="String"                map-to="def:string"/>
+    <style id="char"              _name="Character"             map-to="def:character"/>
+    <style id="keyword"           _name="Keyword"               map-to="def:keyword"/>
+    <style id="operator"          _name="Operator"              map-to="def:operator"/>
+    <style id="prog"              _name="Programme"             map-to="xml:tags"/>
+    <style id="progtitle"         _name="Programme Title"       map-to="def:keyword"/>
+<!--    <style id="floating-point"    _name="Floating point number" map-to="def:floating-point"/>
+    <style id="decimal"           _name="Decimal number"        map-to="def:decimal"/>
+    <style id="octal"             _name="Octal number"          map-to="def:base-n-integer"/>
+    <style id="hexadecimal"       _name="Hexadecimal number"    map-to="def:base-n-integer"/>
+    <style id="defcomp"           _name="Define Complex"        map-to="def:keyword"/>
+    <style id="variable"          _name="Variable"              map-to="def:preprocessor"/>
+    <style id="I-complexes"       _name="I-complexes "          map-to="def:boolean"/>-->
+    <style id="paragraph"         _name="Paragraph"             map-to="def:identifier"/>
+  </styles>
+
+  <definitions>
+
+   <context id="commentm" style-ref="commentm" class="comment" class-disabled="no-spell-check">
+    	    	<start>\/\*</start>
+            <end>\*\/</end>
+    </context>
+   <context id="comment" style-ref="comment" end-at-line-end="true" class="comment" class-disabled="no-spell-check">
+      <start>L?\*\*\*</start>
+    </context>
+      
+   <context id="progtitle" style-ref="progtitle">
+    	    	<start>[a-zA-Z0-9]+\([^/]*\/</start>
+            <end>\)</end>
+   </context>
+   
+   <context id="prog" style-ref="prog">
+    	    	<start>L?\*[a-zA-Z0-9]+\(</start>
+            <end>\)</end>
+   </context>
+   
+    <context id="defcomp" style-ref="defcomp">
+    	    	<match extended="true">
+    	    	@\+(L|F)[0-9]{1,2}\([0-9]{1,3}\)
+            </match>
+   </context>
+   
+   <context id="variable" style-ref="variable">
+      <match extended="true">
+        (L|F)[0-9]{1,3}(.[0-9]|[a-z])?
+      </match>
+    </context>
+     
+<!-- http://www.lysator.liu.se/c/ANSI-C-grammar-l.html -->
+    
+    <context id="string" style-ref="string" end-at-line-end="true" class="string" class-disabled="no-spell-check">
+      <start>L?'</start>
+      <end>'</end>
+    </context>
+    
+    <context id="float" style-ref="floating-point">
+      <match extended="true">
+        (?&lt;![\w\.])
+        ((\.[0-9]+ | [0-9]+\.[0-9]*) ([Ee][+-]?[0-9]*)? |
+         ([0-9]+[Ee][+-]?[0-9]*))
+        [fFlL]?
+        (?![\w\.])
+      </match>
+    </context>
+
+    <context id="hexadecimal" style-ref="hexadecimal">
+      <match extended="true">
+        (?&lt;![\w\.])
+        [a-fA-F0-9]+[hH]
+        (?![\w\.])
+      </match>
+      
+    </context>
+
+    <context id="octal" style-ref="octal">
+      <match extended="true">
+        (?&lt;![\w\.])
+        0[0-7]+[uUlL]*
+        (?![\w\.])
+      </match>
+    </context>
+
+    <context id="decimal" style-ref="decimal">
+      <match extended="true">
+        (?&lt;![\w\.])
+        [0-9]+[uUlL]*
+        (?![\w\.])
+      </match>
+    </context>
+
+<!--  Keywords  -->  
+  
+    <context id="keywords" style-ref="keyword">
+<!--      <keyword>O([a-z]|Q[0-9]+)</keyword>
+      <keyword>D[a-z]</keyword>
+      <keyword>Y[a-z]</keyword>
+      <keyword>Q[0-9]+</keyword>  -->  
+      <keyword>struct</keyword>
+      <keyword>switch</keyword>
+      <keyword>typedef</keyword>
+      <keyword>union</keyword>
+      <keyword>while</keyword>
+    </context>
+
+   
+   <context id="paragraph" style-ref="paragraph">
+     <keyword>P[0-9]+</keyword>
+   </context>
+    
+
+<!-- I-complexes -->
+    <context id="I-complexes" style-ref="I-complexes">
+       <keyword>I([0-9]+|[a-z])</keyword>
+    </context>
+
+<!--Main context-->
+    <context id="lps" class="no-spell-check">
+      <include>
+     
+        <context ref="string"/>
+        <context ref="float"/>
+        <context ref="hexadecimal"/>
+        <context ref="octal"/>
+        <context ref="decimal"/>
+        <context ref="comment"/>
+        <context ref="keywords"/>
+        <context ref="commentm"/>
+        <context ref="I-complexes"/>
+        <context ref="prog"/>
+        <context ref="progtitle"/>
+        <context ref="variable"/>
+        <context ref="defcomp"/>
+        <context ref="paragraph"/>
+        
+      </include>
+    </context>
+
+  </definitions>
+</language>

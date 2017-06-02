@@ -1,0 +1,29 @@
+в файл /etc/environment добавить строку GTK_IM_MODULE=xim (через sudo gedit /etc/environment)
+файл .XCompose скопировать в папку home
+
+=<Right><Right> 	: "⇒" # U+21d2  вводим так: <Ctrl>+<Shift>+<u>21d2<Enter> ⇒
+s s 							: "§" # U+a7 §
+- <Up><Up>				: "↑" # U+2191 ↑
+- <Right><Right> 	: "→" # U+2192 →
+o <Right><Right>	: "⇴" # U+21f4 			: ↪ #U+21AA	
+i <Right><Right>	: "⇸" # U+21f8 ⇸		:	↦ #U+21A6
+i i <Right>				: "⇻" # U+21fb
+i i <Up>					: "⇞" # U+21de 
+O +								: "⊕" # U+2295 ⊕
+> =								: "≥" # U+2265 ≥
+< =								: "≤" # U+2264 ≤ 
+! =								: "≠" # U+2260 ≠
+<Up> - 						: "⁻" # U+207b ⁻
+! !								: "¬" # U+00ac ¬  
+y x								: "∇" # U+2207 ∇
+d x								: "∆" # U+2206 ∆
+| | 							: "∨" # U+2228 
+= <Up><Up>				: "⇑" # U+21d1
+= <Down><Down>		: "⇓" # U+21d3
+- <Up> - <Down>		: "⇅" # U+21c5
+=<Up><Down>				: "⇕" # U+21d5
+< <								: "≪" # U+226A MUCH LESS-THAN 
+> >								: "≫" # U+226B MUCH GREATER-THAN	
+=<Left><Right> 		: "⇔" # U+21d4
+↢ # U+21A2
+↣# U+21A
