@@ -502,8 +502,10 @@ randLComp(L1/)
 
 randLCompMod(L1, m/)
 	Q1⇒i
+	*** Oi Q1-1⇒w
 	↑(m<2)2
-	§1 i↪3 ∇i X;m⇒L1i →1
+	§1 i↪3 ∇i *** ↑(i>w)3 *printf(i/) /'\n'>C ∆i
+	X;m⇒L1i →1
 	§2 *randLComp(L1/)
 	§3
 **
