@@ -505,7 +505,7 @@ randLCompMod(L1, m/)
 	*** Oi Q1-1⇒w
 	↑(m<2)2
 	§1 i↪3 ∇i *** ↑(i>w)3 *printf(i/) /'\n'>C ∆i
-	X;m⇒L1i →1
+	X>16;m⇒L1i →1 *** если m < 1000 поставить проверку
 	§2 *randLComp(L1/)
 	§3
 **
