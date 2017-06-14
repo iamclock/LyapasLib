@@ -503,11 +503,14 @@ randLComp(L1/)
 randLCompMod(L1, m/)
 	Q1⇒i
 	*** Oi Q1-1⇒w
-	↑(m<2)2
-	§1 i↪3 ∇i *** ↑(i>w)3 *printf(i/) /'\n'>C ∆i
-	X>16;m⇒L1i →1 *** если m < 1000 поставить проверку
-	§2 *randLComp(L1/)
-	§3
+	↑(m<2)3
+	§1
+		i↪4 ∇i *** ↑(i>w)4 *printf(i/) /'\n'>C ∆i
+		↑(m<1000)2 X;m⇒L1i →1
+	§2
+		X>16;m⇒L1i
+	§3 *randLComp(L1/)
+	§4
 **
 
 
