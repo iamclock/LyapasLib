@@ -179,15 +179,17 @@ scanf(F1, i, q/a, i)
 	Oa 10⇒q
 	↑(i≥Q1)5
 	§1 ↑(i≥Q1)4	*** может быть ошибка
-  		F1i⇒c
-  		↑(c≠' ')2 ∆i →4
-  §2
-      *c2n(c/b) ***/'b='>C *printf(b/) /'\n'>C
-      *** /'q='>C *printf(q/) /'\n'>C
-      a*q+b⇒a  ***/'a='>C *printf(a/) /'\n'>C
-      ∆i →1
+		F1i⇒c
+		*** ↑(c≠' ')2 *** не работает
+		↑(c≠32)2 ↑(c≠10)2 ∆i →4
+	§2
+		*c2n(c/b)
+		*** /'b = '>C *printf(b/) /'\n'>C
+		*** /'q = '>C *printf(q/) /'\n'>C
+		a*q+b⇒a  ***/'a = '>C *printf(a/) /'\n'>C
+		∆i →1
 	§5	/'ERROR: Пустой массив(scanf)\n'>C
-  §4
+	§4
 **
  
 
