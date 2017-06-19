@@ -510,7 +510,7 @@ randLCompMod(L1, m/)
 		i↪4 ∇i *** ↑(i>w)4 *printf(i/) /'\n'>C ∆i
 		↑(m<1000)2 X;m⇒L1i →1
 	§2
-		X>16;m⇒L1i
+		X>16;m⇒L1i →1
 	§3 *randLComp(L1/)
 	§4
 **
