@@ -77,7 +77,7 @@ n2c(a/b)
 
 
 s2n(F1,q/a)
-	Oi
+	Oi⇒a
 	§1 ↑(i≥Q1)2
 			F1i⇒c
 			*c2n(c/b)
