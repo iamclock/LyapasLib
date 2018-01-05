@@ -114,7 +114,7 @@ def old_lyapas_sintax_replace(file_from, file_to):
 						prev = triangle_up
 					elif prev == 'Y':
 						prev = triangle_down
-			if prev2 > '0' and prev2 < ':':
+			if prev2 > '0' and prev2 < ':' and prev == 'P':
 				prev = paragraph
 			file_to.write(prev)
 			file_to.write(prev2)
